@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Student Management System</h1>
+      <p>Manage student records efficiently.</p>
+    </header>
+
+    <main>
+      <!-- Dashboard -->
+      <section class="dashboard">
+        <h2>Dashboard</h2>
+        <p>Welcome to the Student Management System!</p>
+
+        <div class="dashboard-cards">
+          <div class="cards">
+            <h3>Total Students</h3>
+            <p id="total-students">0</p>
+          </div>
+
+          <div class="cards">
+            <h3>Active Students</h3>
+            <p id="active-students">0</p>
+          </div>
+
+          <div class="cards">
+            <h3>Inactive Students</h3>
+            <p id="inactive-students">0</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Student -->
+      <section class="add-student">
+        <h2 id="form-title">Add Student</h2>
+
+        <form id="add-student-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" min="1" required />
+
+          <label for="class">Class:</label>
+          <input type="text" id="class" required />
+
+          <label for="admission">Admission Number:</label>
+          <input type="text" id="admission" required />
+
+          <label for="status">Student Status:</label>
+          <select id="status">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+
+          <button type="submit" id="submit-button">Add Student</button>
+          <button type="button" id="cancel-edit" hidden>Cancel Edit</button>
+        </form>
+      </section>
+
+      <!-- Student Records -->
+      <section class="student-records">
+        <h2>Student Records</h2>
+
+        <input
+          type="search"
+          id="search-student"
+          placeholder="Search by name, class or admission number..."
+        />
+
+        <div class="table-container">
+          <table id="student-records-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Class</th>
+                <th>Admission Number</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody id="student-list"></tbody>
+          </table>
+        </div>
+
+        <p id="empty-message" hidden>No students found.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
